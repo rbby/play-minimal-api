@@ -1,0 +1,11 @@
+az login
+
+az aks get-credentials --resource-group rg-aks-01 --name purgatorio
+
+kubectl get nodes
+kubectl get pods
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+kubectl get events
+kubectl config view
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+kubectl get services
